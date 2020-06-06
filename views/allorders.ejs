@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <title>Fair Foods Reservation System</title>
+
+</head>
+
+<body>
+    <div class="container">
+        <h1>All Fair Food Orders</h1>
+        <br>
+        <a href="/">Back home</a>
+        <br>
+        <table class="table thead-light table-striped table-hover">
+            <thead class=thead-light>
+                <tr>
+                    <th>First name</th>
+                    <th>No. of bags</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% all_orders.forEach( (single_order) => { %>
+                <tr>
+                    <td><%= single_order.clientName %> </td>
+
+                    <td class="bag-col"><%= single_order.bags %> </td>
+                </tr>
+                <% }); %>
+                <tr>
+                    <td>Total</td>
+                    <td class="bagTotal"></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+<!-- query selector stuff below -->
+    <script>
+        let bagColAry = document.querySelectorAll('.bag-col');
+        let bagSum = 0;
+        for (let i = 0; i < bagColAry.length; i++) {
+            bagSum += parseInt(bagColAry[i].innerText);
+        }
+        document.querySelector('.bagTotal').innerText = bagSum;
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,5 @@
+# Ignore main Node folder to save on filesize for pushing to GitHub
+node_modules
+
+# Ignore .env file which stores secret info that should not be shared on GitHub
+.env

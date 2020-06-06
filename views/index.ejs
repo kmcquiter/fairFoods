@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<link rel="stylesheet" href="/css/styles.css">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+		integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+	<title>Fair Foods Reservation System</title>
+</head>
+
+<body>
+	<div class="container">
+		<header class="jumbotron">
+			<div class="headerText">
+				<h1>Fair Foods Reservation System</h1>
+				<p>
+					Use this page to reserve one or more bags of fresh produce. Pick up on Tuesday afternoons at Lena Park. Each
+					bag costs $2. Learn more about Fair Foods <a href="http://www.fairfoods.org/index.php?page=food_rescue.htm"
+						target="_blank">here</a>.
+				</p>
+			</div>
+            <div>
+				<img src="\img\FairFoods.jpg" width="240" class="">
+			</div>
+		</header>
+	<p>
+      How many grocery bags you are planning to purchase?
+    </p>
+<!-- the action is telling us where the data should be sent in this case /order -->
+    <form action="/order" method="POST">
+      <label for="clientName">Name:</label>
+      <input type="text" id="clientName" name="clientName">
+      <label for="bags">Number:</label>
+      <select name="bags" id="bags">
+        <option value=1>1</option>
+        <option value=2>2</option>
+        <option value=3>3</option>
+        <option value=4>4</option>
+        <option value=5>5</option>
+        <option value=6>6</option>
+      </select>
+      <input type="submit" value="Save" />
+      <span><a href="/allOrders">View all orders</a></span>
+    </form>
+
+    <div class="alert-success">
+        <%= message %>
+    </div>
+    </div>
+    
+
+</body>
+
+</html>

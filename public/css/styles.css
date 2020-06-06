@@ -1,0 +1,16 @@
+body {
+	background-color: blue;
+}
+h1, header p {
+	text-align: center;
+}
+
+.headerText {
+    margin: 5px;
+}
+
+.jumbotron {
+    display: flex;
+    padding: 0;
+   
+}
